@@ -1,6 +1,6 @@
 package com.maxvalencio.twitter.to.kafka.service.runner.impl;
 
-import com.maxvalencio.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData;
+import com.maxvalencio.config.TwitterToKafkaServiceConfigData;
 import com.maxvalencio.twitter.to.kafka.service.exception.TwitterToKafkaServiceException;
 import com.maxvalencio.twitter.to.kafka.service.listener.TwitterToKafkaStatusListener;
 import com.maxvalencio.twitter.to.kafka.service.runner.StreamRunner;

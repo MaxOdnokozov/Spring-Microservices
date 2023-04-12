@@ -1,6 +1,6 @@
 package com.maxvalencio.twitter.to.kafka.service.runner.impl;
 
-import com.maxvalencio.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData;
+import com.maxvalencio.config.TwitterToKafkaServiceConfigData;
 import com.maxvalencio.twitter.to.kafka.service.listener.TwitterToKafkaStatusListener;
 import com.maxvalencio.twitter.to.kafka.service.runner.StreamRunner;
 import jakarta.annotation.PreDestroy;
@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.FilterQuery;
-import twitter4j.TwitterException;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
 

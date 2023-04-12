@@ -1,4 +1,4 @@
-package com.maxvalencio.twitter.to.kafka.service.config;
+package com.maxvalencio.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
