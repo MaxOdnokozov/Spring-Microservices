@@ -122,7 +122,6 @@ public class KafkaAdminClient {
             sleep(sleepTimeMs);
             sleepTimeMs *= multiplier;
         }
-
     }
 
     private HttpStatus getSchemaRegistryStatus() {
