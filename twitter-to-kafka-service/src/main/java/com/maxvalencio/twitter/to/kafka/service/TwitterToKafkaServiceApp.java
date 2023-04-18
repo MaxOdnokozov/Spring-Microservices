@@ -1,6 +1,6 @@
 package com.maxvalencio.twitter.to.kafka.service;
 
-import com.maxvalencio.config.TwitterToKafkaServiceConfigData;
+import com.maxvalencio.twitter.to.kafka.service.init.StreamInitializer;
 import com.maxvalencio.twitter.to.kafka.service.runner.StreamRunner;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +15,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class TwitterToKafkaServiceApp implements CommandLineRunner {
 
-    private final TwitterToKafkaServiceConfigData configData;
     private final StreamRunner streamRunner;
+    private final StreamInitializer streamInitializer;
 
     public static void main(String[] args) {
         SpringApplication.run(TwitterToKafkaServiceApp.class, args);
@@ -25,8 +25,7 @@ public class TwitterToKafkaServiceApp implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Application starts....");
-        log.info("Twitter keywords: {}", configData.getTwitterKeywords().toString());
-        log.info(configData.getWelcomeMessage());
         streamRunner.start();
     }
 }
+

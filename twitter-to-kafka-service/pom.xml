@@ -20,7 +20,6 @@
         <dependency>
             <groupId>com.maxvalencio</groupId>
             <artifactId>app-config-data</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
@@ -37,6 +36,16 @@
         <dependency>
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-stream</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.maxvalencio</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.maxvalencio</groupId>
+            <artifactId>kafka-admin</artifactId>
         </dependency>
 
         <dependency>
