@@ -61,6 +61,8 @@ public class KafkaAdminClient {
         var maxRetry = retryConfigData.getMaxAttempts();
         int multiplier = retryConfigData.getMultiplier().intValue();
         Long sleepTimeMs = retryConfigData.getSleepTimeMs();
+
+        log.info("Checking topic creation");
         for (String topic : kafkaConfigData.getTopicNamesToCreate()) {
             while (!isTopicCreated(topics, topic)) {
                 checkMaxRetry(retryCount++, maxRetry);
@@ -138,7 +140,7 @@ public class KafkaAdminClient {
                         }
                     }).block();
         } catch (Exception e) {
-            log.info("");
+            log.info("Cannot connect to schema Registry for checking status");
             return HttpStatus.SERVICE_UNAVAILABLE;
         }
     }
