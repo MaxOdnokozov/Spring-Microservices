@@ -15,6 +15,7 @@ import org.springframework.retry.RetryContext;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.Collection;
 import java.util.List;
@@ -126,12 +127,18 @@ public class KafkaAdminClient {
 
     private HttpStatus getSchemaRegistryStatus() {
         try {
-            return webClient
+            return (HttpStatus) webClient
                     .method(HttpMethod.GET)
                     .uri(kafkaConfigData.getSchemaRegistryUrl())
-                    .exchangeToMono(response -> response.bodyToMono(HttpStatus.class))
-                    .block();
+                    .exchangeToMono(response -> {
+                        if (response.statusCode().is2xxSuccessful()) {
+                            return Mono.just(response.statusCode());
+                        } else {
+                            return Mono.just(HttpStatus.SERVICE_UNAVAILABLE);
+                        }
+                    }).block();
         } catch (Exception e) {
+            log.info("");
             return HttpStatus.SERVICE_UNAVAILABLE;
         }
     }

@@ -34,7 +34,8 @@ public class KafkaProducerConfig<K extends Serializable, V extends SpecificRecor
                 ProducerConfig.LINGER_MS_CONFIG, kafkaProducerConfigData.getLingerMs(),
                 ProducerConfig.COMPRESSION_TYPE_CONFIG, kafkaProducerConfigData.getCompressionType(),
                 ProducerConfig.ACKS_CONFIG, kafkaProducerConfigData.getAcks(),
-                ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, kafkaProducerConfigData.getRequestTimeoutMs()
+                ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, kafkaProducerConfigData.getRequestTimeoutMs(),
+                ProducerConfig.RETRIES_CONFIG, kafkaProducerConfigData.getRetryCount()
         );
     }
 
