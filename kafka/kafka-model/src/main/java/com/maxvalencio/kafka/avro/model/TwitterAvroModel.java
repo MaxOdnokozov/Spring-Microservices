@@ -9,11 +9,9 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.SchemaStore;
 import org.apache.avro.specific.SpecificData;
-import org.apache.avro.specific.SpecificRecord;
-import org.apache.avro.specific.SpecificRecordBase;
 
 @org.apache.avro.specific.AvroGenerated
-public class TwitterAvroModel extends SpecificRecordBase implements SpecificRecord {
+public class TwitterAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
 
   private static final long serialVersionUID = -5657743761534608523L;
 

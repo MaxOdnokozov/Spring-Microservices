@@ -110,7 +110,7 @@ public class KafkaAdminClient {
                 kafkaConfigData.getTopicNamesToCreate(), retryContext.getRetryCount());
         Collection<TopicListing> topics = adminClient.listTopics().listings().get();
         if (topics != null) {
-            topics.forEach(topic -> log.debug("Topic with name {}", topic.name()));
+            topics.forEach(topic -> log.debug("Topic with name {} is created", topic.name()));
         }
         return topics;
     }
@@ -134,6 +134,7 @@ public class KafkaAdminClient {
                     .uri(kafkaConfigData.getSchemaRegistryUrl())
                     .exchangeToMono(response -> {
                         if (response.statusCode().is2xxSuccessful()) {
+                            log.info("Connected to schema Registry. Current status is {}", response.statusCode());
                             return Mono.just(response.statusCode());
                         } else {
                             return Mono.just(HttpStatus.SERVICE_UNAVAILABLE);

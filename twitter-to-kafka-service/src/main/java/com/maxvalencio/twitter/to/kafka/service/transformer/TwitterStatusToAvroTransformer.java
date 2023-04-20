@@ -8,7 +8,8 @@ import twitter4j.Status;
 public class TwitterStatusToAvroTransformer {
 
     public TwitterAvroModel getTwitterAvroModel(Status status) {
-        return TwitterAvroModel.newBuilder()
+        return TwitterAvroModel
+                .newBuilder()
                 .setId(status.getId())
                 .setUserId(status.getUser().getId())
                 .setText(status.getText())
