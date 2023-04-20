@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: config-server
+    cloud:
+      config:
+        server:
+          uri: file://Users/Maksym_Odnokozov/IdeaProjects/Spring-Microservices/config-server-repository #path should be changed in case on running on other machines
+          clone-on-start: true
+      fail-start: true
