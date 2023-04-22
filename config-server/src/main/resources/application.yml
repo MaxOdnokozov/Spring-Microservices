@@ -5,3 +5,16 @@ logging:
   level:
     ROOT: INFO
     org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MaxOdnokozov/spring-cloud-config-server-repository
+          username: maxvalencio@gmail.com
+          password: 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
+          clone-on-start: true
+    fail-fast: true

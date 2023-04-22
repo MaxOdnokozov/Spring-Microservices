@@ -33,6 +33,7 @@
         <spring-kafka.version>3.0.5</spring-kafka.version>
         <spring-cloud-config-server.version>4.0.2</spring-cloud-config-server.version>
         <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
+        <spring-cloud-starter-config.version>4.0.1</spring-cloud-starter-config.version>
         <twitter4j.version>4.0.7</twitter4j.version>
         <lombok.version>1.18.24</lombok.version>
         <avro.version>1.11.1</avro.version>
@@ -103,6 +104,12 @@
                 <version>${spring-cloud-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring-cloud-starter-config.version}</version>
             </dependency>
 
 
