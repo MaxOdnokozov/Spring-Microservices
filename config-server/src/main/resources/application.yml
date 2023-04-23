@@ -14,7 +14,11 @@ spring:
       server:
         git:
           uri: https://github.com/MaxOdnokozov/spring-cloud-config-server-repository
-          username: maxvalencio@gmail.com
-          password: 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
+          username: ${GIT_USER}
+          password: ${GIT_USER_SECRET}
           clone-on-start: true
     fail-fast: true
+  security:
+    user:
+      name: ${USER_NAME}
+      password: ${USER_SECRET}
