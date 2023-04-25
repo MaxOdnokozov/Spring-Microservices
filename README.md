@@ -29,3 +29,4 @@ change `placeholder` to real value in `docker-compose/services.yml` file for nex
 
 Useful commands:
 - for checking topics use command `docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092`
+- for making script check-config-server-started.sh to runnable `chmod +x check-config-server-started.sh`
